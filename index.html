@@ -5,275 +5,188 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jakub Kacprzyk | Automation & Robotics Engineer</title>
   <style>
-    /* ─── Reset & base ─────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg:       #0a0e1a;
-      --surface:  #111827;
-      --card:     #1a2236;
-      --border:   #1e2d45;
-      --accent:   #00d4ff;
-      --accent2:  #7c3aed;
-      --text:     #e2e8f0;
-      --muted:    #94a3b8;
-      --radius:   10px;
+      --bg:      #0a0e1a;
+      --surface: #111827;
+      --card:    #1a2236;
+      --border:  #1e2d45;
+      --accent:  #00d4ff;
+      --accent2: #7c3aed;
+      --green:   #10b981;
+      --yellow:  #f59e0b;
+      --text:    #e2e8f0;
+      --muted:   #94a3b8;
+      --radius:  10px;
     }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    /* ─── Nav ───────────────────────────────────────────────────── */
+    /* ── Nav ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1rem 2rem;
-      background: rgba(10,14,26,.85);
-      backdrop-filter: blur(12px);
+      background: rgba(10,14,26,.9); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-size: 1.1rem; font-weight: 700; color: var(--accent);
-      letter-spacing: .5px;
-    }
+    .nav-logo { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { color: var(--muted); font-size: .9rem; transition: color .2s; }
     .nav-links a:hover { color: var(--accent); text-decoration: none; }
 
-    /* ─── Sections ──────────────────────────────────────────────── */
+    /* ── Layout ── */
     section { padding: 5rem 1.5rem; max-width: 1100px; margin: 0 auto; }
-    .section-label {
-      font-size: .75rem; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .5rem;
-    }
+    .section-label { font-size: .75rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
     h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; }
     h2 span { color: var(--accent); }
 
-    /* ─── Hero ──────────────────────────────────────────────────── */
+    /* ── Hero ── */
     #hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column; justify-content: center;
+      min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
       padding-top: 5rem; max-width: 1100px; margin: 0 auto;
     }
     .hero-tag {
-      display: inline-block;
-      background: rgba(0,212,255,.1);
-      border: 1px solid rgba(0,212,255,.3);
-      color: var(--accent);
-      padding: .25rem .75rem;
-      border-radius: 20px;
-      font-size: .8rem;
-      letter-spacing: 1px;
-      margin-bottom: 1.5rem;
+      display: inline-block; background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.3);
+      color: var(--accent); padding: .25rem .75rem; border-radius: 20px; font-size: .8rem;
+      letter-spacing: 1px; margin-bottom: 1.5rem;
     }
-    .hero-name {
-      font-size: clamp(2.5rem, 7vw, 5rem);
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-    .hero-name span {
-      background: linear-gradient(90deg, var(--accent), var(--accent2));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .hero-sub { font-size: 1.2rem; color: var(--muted); max-width: 600px; margin-bottom: 2rem; }
+    .hero-name { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-name span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-sub { font-size: 1.2rem; color: var(--muted); max-width: 620px; margin-bottom: 2rem; }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      padding: .7rem 1.6rem; border-radius: 6px;
-      font-size: .95rem; font-weight: 600; cursor: pointer;
-      transition: all .2s; border: none;
-    }
-    .btn-primary {
-      background: var(--accent); color: #000;
-    }
+    .btn { padding: .7rem 1.6rem; border-radius: 6px; font-size: .95rem; font-weight: 600; transition: all .2s; border: none; display: inline-block; }
+    .btn-primary { background: var(--accent); color: #000; }
     .btn-primary:hover { background: #33ddff; text-decoration: none; }
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-    .hero-scroll {
-      margin-top: 4rem; color: var(--muted); font-size: .85rem;
-      display: flex; align-items: center; gap: .5rem;
-    }
-    .hero-scroll::before {
-      content: '';
-      display: block; width: 1px; height: 40px;
-      background: linear-gradient(to bottom, transparent, var(--muted));
-    }
+    .hero-scroll { margin-top: 4rem; color: var(--muted); font-size: .85rem; display: flex; align-items: center; gap: .5rem; }
+    .hero-scroll::before { content: ''; display: block; width: 1px; height: 40px; background: linear-gradient(to bottom, transparent, var(--muted)); }
 
-    /* ─── About ─────────────────────────────────────────────────── */
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
-    }
+    /* ── About ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     .about-text p { color: var(--muted); margin-bottom: 1rem; }
-    .about-stats {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-    }
-    .stat-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.25rem;
-    }
-    .stat-num {
-      font-size: 2rem; font-weight: 800; color: var(--accent);
-      display: block;
-    }
+    .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.25rem; }
+    .stat-num { font-size: 2rem; font-weight: 800; color: var(--accent); display: block; }
     .stat-label { font-size: .8rem; color: var(--muted); }
 
-    /* ─── Skills ────────────────────────────────────────────────── */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.25rem;
+    /* ── Engineering approach strip ── */
+    .approach-strip {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;
+      margin-bottom: 3rem;
     }
-    .skill-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem;
-      transition: border-color .2s;
+    .approach-item {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.1rem 1.25rem; display: flex; align-items: center; gap: .75rem;
     }
+    .approach-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .approach-item span { font-size: .85rem; color: var(--muted); line-height: 1.3; }
+
+    /* ── Skills ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.25rem; }
+    .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: border-color .2s; }
     .skill-card:hover { border-color: var(--accent); }
     .skill-icon { font-size: 1.5rem; margin-bottom: .75rem; }
     .skill-card h3 { font-size: 1rem; margin-bottom: .75rem; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
-    .tag {
-      background: rgba(0,212,255,.08);
-      border: 1px solid rgba(0,212,255,.2);
-      color: var(--accent);
-      padding: .2rem .6rem; border-radius: 4px; font-size: .75rem;
-    }
-    .tag.purple {
-      background: rgba(124,58,237,.08);
-      border-color: rgba(124,58,237,.3);
-      color: #a78bfa;
-    }
-    .tag.green {
-      background: rgba(16,185,129,.08);
-      border-color: rgba(16,185,129,.3);
-      color: #34d399;
-    }
+    .tag { background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.2); color: var(--accent); padding: .2rem .6rem; border-radius: 4px; font-size: .75rem; }
+    .tag.purple { background: rgba(124,58,237,.08); border-color: rgba(124,58,237,.3); color: #a78bfa; }
+    .tag.green { background: rgba(16,185,129,.08); border-color: rgba(16,185,129,.3); color: #34d399; }
+    .tag.yellow { background: rgba(245,158,11,.08); border-color: rgba(245,158,11,.3); color: #fbbf24; }
 
-    /* ─── Projects ──────────────────────────────────────────────── */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
+    /* ── Projects ── */
+    .projects-note {
+      color: var(--muted); font-size: .9rem; margin-bottom: 2rem;
+      padding: .75rem 1rem; background: rgba(0,212,255,.05);
+      border-left: 3px solid var(--accent); border-radius: 0 6px 6px 0;
     }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
     .project-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.75rem;
-      display: flex; flex-direction: column;
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.75rem; display: flex; flex-direction: column; gap: 1rem;
       transition: border-color .2s, transform .2s;
     }
     .project-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-    .project-top {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      margin-bottom: 1rem;
+    .project-card.featured { grid-column: 1 / -1; }
+    .project-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .project-category {
+      font-size: .7rem; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: .35rem;
     }
-    .project-icon { font-size: 1.8rem; }
-    .project-status {
-      font-size: .7rem; padding: .2rem .6rem; border-radius: 20px; font-weight: 600;
-    }
+    .project-title { font-size: 1.15rem; font-weight: 700; }
+    .project-status { font-size: .7rem; padding: .25rem .65rem; border-radius: 20px; font-weight: 600; white-space: nowrap; flex-shrink: 0; margin-left: .5rem; margin-top: .1rem; }
     .status-active { background: rgba(16,185,129,.1); color: #34d399; border: 1px solid rgba(16,185,129,.3); }
-    .status-planned { background: rgba(251,191,36,.1); color: #fbbf24; border: 1px solid rgba(251,191,36,.3); }
+    .status-planned { background: rgba(245,158,11,.1); color: #fbbf24; border: 1px solid rgba(245,158,11,.3); }
     .status-wip { background: rgba(0,212,255,.1); color: var(--accent); border: 1px solid rgba(0,212,255,.3); }
-    .project-card h3 { font-size: 1.1rem; margin-bottom: .5rem; }
-    .project-card p { color: var(--muted); font-size: .9rem; flex: 1; }
-    .project-footer {
-      margin-top: 1.25rem; padding-top: 1rem;
-      border-top: 1px solid var(--border);
-      display: flex; justify-content: space-between; align-items: center;
+    .project-desc { color: var(--muted); font-size: .9rem; }
+    .project-problem { font-size: .82rem; color: var(--muted); }
+    .project-problem strong { color: var(--text); }
+    .project-arch {
+      display: flex; align-items: center; flex-wrap: wrap; gap: .3rem;
+      font-size: .75rem; background: rgba(0,0,0,.2);
+      border: 1px solid var(--border); border-radius: 6px; padding: .6rem .85rem;
     }
-    .project-tech { display: flex; gap: .4rem; flex-wrap: wrap; }
-    .project-link {
-      font-size: .8rem; color: var(--accent);
-      display: flex; align-items: center; gap: .3rem;
-      white-space: nowrap;
+    .arch-node {
+      background: rgba(0,212,255,.08); border: 1px solid rgba(0,212,255,.15);
+      color: var(--accent); padding: .15rem .5rem; border-radius: 4px; white-space: nowrap;
     }
+    .arch-arrow { color: var(--muted); font-size: .8rem; }
+    .project-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .75rem; padding-top: .75rem; border-top: 1px solid var(--border); }
+    .project-tech { display: flex; gap: .35rem; flex-wrap: wrap; }
+    .project-link { font-size: .82rem; color: var(--accent); white-space: nowrap; }
 
-    /* ─── Roadmap ───────────────────────────────────────────────── */
-    .roadmap { display: flex; flex-direction: column; gap: 0; }
-    .roadmap-item {
-      display: grid; grid-template-columns: 120px 40px 1fr;
-      align-items: start; gap: 0 1rem;
-    }
-    .roadmap-date {
-      text-align: right; font-size: .85rem; color: var(--muted); padding-top: .15rem;
-    }
-    .roadmap-line {
-      display: flex; flex-direction: column; align-items: center;
-    }
-    .roadmap-dot {
-      width: 12px; height: 12px; border-radius: 50%;
-      background: var(--accent); flex-shrink: 0; margin-top: .25rem;
-    }
+    /* ── Roadmap ── */
+    .roadmap { display: flex; flex-direction: column; }
+    .roadmap-item { display: grid; grid-template-columns: 120px 40px 1fr; align-items: start; gap: 0 1rem; }
+    .roadmap-date { text-align: right; font-size: .85rem; color: var(--muted); padding-top: .15rem; }
+    .roadmap-line { display: flex; flex-direction: column; align-items: center; }
+    .roadmap-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: .25rem; }
     .roadmap-dot.done { background: #34d399; }
     .roadmap-dot.next { background: var(--accent); box-shadow: 0 0 0 4px rgba(0,212,255,.2); }
     .roadmap-dot.future { background: var(--border); }
-    .roadmap-connector {
-      width: 2px; flex: 1; min-height: 40px;
-      background: var(--border);
-    }
-    .roadmap-content {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem;
-    }
+    .roadmap-connector { width: 2px; flex: 1; min-height: 40px; background: var(--border); }
+    .roadmap-content { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1rem; }
     .roadmap-content h3 { font-size: .95rem; margin-bottom: .25rem; }
     .roadmap-content p { font-size: .85rem; color: var(--muted); }
 
-    /* ─── Contact ───────────────────────────────────────────────── */
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;
-    }
+    /* ── Contact ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
     .contact-info p { color: var(--muted); margin-bottom: 1.5rem; }
     .contact-links { display: flex; flex-direction: column; gap: .75rem; }
     .contact-link {
-      display: flex; align-items: center; gap: .75rem;
-      color: var(--text); font-size: .95rem;
-      padding: .75rem 1rem;
-      background: var(--card); border: 1px solid var(--border);
+      display: flex; align-items: center; gap: .75rem; color: var(--text); font-size: .95rem;
+      padding: .75rem 1rem; background: var(--card); border: 1px solid var(--border);
       border-radius: 6px; transition: border-color .2s;
     }
     .contact-link:hover { border-color: var(--accent); text-decoration: none; color: var(--accent); }
-    .contact-link-icon { font-size: 1.1rem; }
     form { display: flex; flex-direction: column; gap: 1rem; }
     input, textarea {
-      background: var(--card); border: 1px solid var(--border);
-      color: var(--text); border-radius: 6px;
-      padding: .75rem 1rem; font-size: .95rem; font-family: inherit;
-      outline: none; transition: border-color .2s;
-      width: 100%;
+      background: var(--card); border: 1px solid var(--border); color: var(--text);
+      border-radius: 6px; padding: .75rem 1rem; font-size: .95rem; font-family: inherit;
+      outline: none; transition: border-color .2s; width: 100%;
     }
     input:focus, textarea:focus { border-color: var(--accent); }
     textarea { resize: vertical; min-height: 120px; }
     input::placeholder, textarea::placeholder { color: var(--muted); }
 
-    /* ─── Footer ────────────────────────────────────────────────── */
-    footer {
-      text-align: center; padding: 2rem;
-      border-top: 1px solid var(--border);
-      color: var(--muted); font-size: .85rem;
-    }
+    footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
 
-    /* ─── Responsive ────────────────────────────────────────────── */
+    /* ── Responsive ── */
     @media (max-width: 700px) {
       nav { padding: .75rem 1.25rem; }
       .nav-links { gap: 1.25rem; }
       .about-grid, .contact-grid { grid-template-columns: 1fr; }
       .roadmap-item { grid-template-columns: 80px 30px 1fr; }
-      .roadmap-date { font-size: .75rem; }
+      .project-card.featured { grid-column: 1; }
     }
   </style>
 </head>
 <body>
 
-<!-- ─── Navigation ─────────────────────────────────────────────── -->
+<!-- ── Nav ── -->
 <nav>
   <span class="nav-logo">JK.</span>
   <ul class="nav-links">
@@ -285,14 +198,14 @@
   </ul>
 </nav>
 
-<!-- ─── Hero ───────────────────────────────────────────────────── -->
+<!-- ── Hero ── -->
 <section id="hero">
   <span class="hero-tag">&#x1F916; Automation &amp; Robotics Engineer</span>
   <h1 class="hero-name">Hi, I'm <span>Jakub<br>Kacprzyk</span></h1>
   <p class="hero-sub">
-    Building the future through intelligent robots, automation systems,
-    and AI-driven control. Passionate about making machines that
-    think, adapt, and work alongside humans.
+    I build end-to-end systems where AI meets hardware — from sensor networks
+    and computer vision pipelines to autonomous robots and industrial automation.
+    My goal: machines that think, adapt, and work alongside humans.
   </p>
   <div class="hero-btns">
     <a class="btn btn-primary" href="#projects">View Projects</a>
@@ -302,42 +215,43 @@
   <div class="hero-scroll">Scroll to explore</div>
 </section>
 
-<!-- ─── About ──────────────────────────────────────────────────── -->
+<!-- ── About ── -->
 <section id="about">
   <p class="section-label">// about me</p>
   <h2>Who I <span>Am</span></h2>
   <div class="about-grid">
     <div class="about-text">
       <p>
-        I'm an aspiring Automation &amp; Robotics engineer with a deep interest in
-        artificial intelligence and the future of intelligent machines. My goal is to
-        design systems where software intelligence meets physical hardware — from
-        robotic arms on factory floors to autonomous vehicles navigating real-world environments.
+        I'm an aspiring Automation &amp; Robotics engineer focused on AI-driven
+        physical systems. My ambition is to design solutions where software
+        intelligence is inseparable from hardware — from factory-floor automation
+        to autonomous robots navigating real-world environments.
       </p>
       <p>
-        I'm currently building my foundation in Python, ROS (Robot Operating System),
-        computer vision, and machine learning. I believe the engineers who will shape
-        the next decade are those who can bridge the gap between AI research and
-        real physical systems.
+        I approach engineering as a systems thinker: I care about the full
+        pipeline from raw sensor data to deployment, not just the model or
+        the script in isolation. That means thinking about communication
+        protocols, data flow, deployment constraints, and real-world failure modes.
       </p>
       <p>
-        Outside engineering I'm interested in simulation environments — including
-        game engines — as platforms for training autonomous agents and testing
-        automated systems at scale before deploying to real hardware.
+        I'm also interested in simulation environments — including game engines —
+        as training grounds for autonomous agents before they touch real hardware.
+        Virtual environments are where I can iterate 100x faster and validate
+        system-level logic safely.
       </p>
     </div>
     <div class="about-stats">
       <div class="stat-card">
-        <span class="stat-num">5+</span>
-        <span class="stat-label">Personal Projects</span>
+        <span class="stat-num">5</span>
+        <span class="stat-label">Core Projects</span>
       </div>
       <div class="stat-card">
-        <span class="stat-num">3</span>
-        <span class="stat-label">Programming Languages</span>
+        <span class="stat-num">E2E</span>
+        <span class="stat-label">System Thinking</span>
       </div>
       <div class="stat-card">
-        <span class="stat-num">AI</span>
-        <span class="stat-label">Core Focus Area</span>
+        <span class="stat-num">AI+HW</span>
+        <span class="stat-label">Core Intersection</span>
       </div>
       <div class="stat-card">
         <span class="stat-num">2026</span>
@@ -347,7 +261,7 @@
   </div>
 </section>
 
-<!-- ─── Skills ─────────────────────────────────────────────────── -->
+<!-- ── Skills ── -->
 <section id="skills">
   <p class="section-label">// technical skills</p>
   <h2>What I <span>Know</span></h2>
@@ -366,189 +280,344 @@
 
     <div class="skill-card">
       <div class="skill-icon">&#x1F916;</div>
-      <h3>Robotics</h3>
+      <h3>Robotics &amp; Simulation</h3>
       <div class="skill-tags">
         <span class="tag">ROS 2</span>
+        <span class="tag">Gazebo</span>
+        <span class="tag">Webots</span>
+        <span class="tag">MoveIt</span>
         <span class="tag">Arduino</span>
         <span class="tag">Raspberry Pi</span>
-        <span class="tag">Kinematics</span>
       </div>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">&#x1F9E0;</div>
-      <h3>Artificial Intelligence</h3>
+      <h3>AI &amp; Computer Vision</h3>
       <div class="skill-tags">
         <span class="tag purple">PyTorch</span>
-        <span class="tag purple">TensorFlow</span>
-        <span class="tag purple">Scikit-learn</span>
+        <span class="tag purple">YOLOv8</span>
         <span class="tag purple">OpenCV</span>
+        <span class="tag purple">Scikit-learn</span>
+        <span class="tag purple">ONNX</span>
+        <span class="tag purple">MLflow</span>
       </div>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">&#x26A1;</div>
-      <h3>Automation</h3>
+      <h3>Industrial IoT &amp; Automation</h3>
       <div class="skill-tags">
+        <span class="tag green">MQTT</span>
+        <span class="tag green">Node-RED</span>
+        <span class="tag green">InfluxDB</span>
+        <span class="tag green">Grafana</span>
+        <span class="tag green">ESP32</span>
         <span class="tag green">PLC Basics</span>
-        <span class="tag green">MQTT / IoT</span>
-        <span class="tag green">Selenium</span>
-        <span class="tag green">CI/CD</span>
       </div>
     </div>
 
     <div class="skill-card">
       <div class="skill-icon">&#x1F4E1;</div>
-      <h3>Simulation</h3>
+      <h3>System Design &amp; Backend</h3>
       <div class="skill-tags">
-        <span class="tag">Gazebo</span>
-        <span class="tag">Webots</span>
-        <span class="tag">Unity ML-Agents</span>
+        <span class="tag yellow">FastAPI</span>
+        <span class="tag yellow">Kafka</span>
+        <span class="tag yellow">Redis</span>
+        <span class="tag yellow">PostgreSQL</span>
+        <span class="tag yellow">Docker</span>
+        <span class="tag yellow">GitHub Actions</span>
       </div>
     </div>
 
     <div class="skill-card">
-      <div class="skill-icon">&#x1F6E0;&#xFE0F;</div>
-      <h3>Tools &amp; Dev</h3>
+      <div class="skill-icon">&#x1F4D0;</div>
+      <h3>Algorithms &amp; Math</h3>
       <div class="skill-tags">
-        <span class="tag green">Git / GitHub</span>
-        <span class="tag green">Docker</span>
-        <span class="tag green">Linux</span>
-        <span class="tag green">VS Code</span>
+        <span class="tag">PID Control</span>
+        <span class="tag">Kalman Filter</span>
+        <span class="tag">A* / RRT</span>
+        <span class="tag">Kinematics</span>
+        <span class="tag">Sensor Fusion</span>
+        <span class="tag">RL Basics</span>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ─── Projects ───────────────────────────────────────────────── -->
+<!-- ── Projects ── -->
 <section id="projects">
   <p class="section-label">// projects</p>
   <h2>What I've <span>Built</span></h2>
+
+  <p class="projects-note">
+    Each project is built end-to-end — hardware to deployment — with full README, architecture diagram, and documented engineering decisions.
+    Quality over quantity: 5 deep projects &gt; 40 tutorials.
+  </p>
+
   <div class="projects-grid">
 
+    <!-- 1. Industrial IoT -->
     <div class="project-card">
-      <div class="project-top">
-        <span class="project-icon">&#x1F5FA;&#xFE0F;</span>
+      <div class="project-header">
+        <div>
+          <div class="project-category">Industrial Automation / IoT</div>
+          <div class="project-title">Smart Greenhouse Monitor</div>
+        </div>
         <span class="project-status status-wip">In Progress</span>
       </div>
-      <h3>Autonomous Navigation Robot</h3>
-      <p>
-        A ROS 2 powered mobile robot that maps an unknown environment using
-        SLAM and navigates autonomously using a LiDAR sensor. Simulated in
-        Gazebo, target deployment on Raspberry Pi hardware.
+      <p class="project-desc">
+        Automated sensor network monitoring temperature, humidity, soil moisture,
+        and light. Triggers actuators (fans, pumps, grow lights) based on
+        configurable thresholds. Built to demonstrate real industrial automation
+        concepts on accessible hardware.
       </p>
+      <p class="project-problem">
+        <strong>Problem:</strong> Manual monitoring causes crop loss and energy waste.<br>
+        <strong>Solution:</strong> ESP32 nodes + MQTT bus + automated control logic + live Grafana dashboard with SMS alerts.
+      </p>
+      <div class="project-arch">
+        <span class="arch-node">ESP32 Sensors</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">MQTT Broker</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Node-RED</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">InfluxDB</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Grafana</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Alerts</span>
+      </div>
       <div class="project-footer">
         <div class="project-tech">
-          <span class="tag">ROS 2</span>
-          <span class="tag">Python</span>
-          <span class="tag">Gazebo</span>
+          <span class="tag green">ESP32</span>
+          <span class="tag green">MQTT</span>
+          <span class="tag green">Node-RED</span>
+          <span class="tag green">InfluxDB</span>
+          <span class="tag green">Grafana</span>
+          <span class="tag">Docker</span>
         </div>
         <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
       </div>
     </div>
 
+    <!-- 2. Robotics + CV -->
     <div class="project-card">
-      <div class="project-top">
-        <span class="project-icon">&#x1F4F7;</span>
-        <span class="project-status status-active">Complete</span>
+      <div class="project-header">
+        <div>
+          <div class="project-category">Robotics + Computer Vision</div>
+          <div class="project-title">Vision-Based Autonomous Robot</div>
+        </div>
+        <span class="project-status status-wip">In Progress</span>
       </div>
-      <h3>Object Detection Pipeline</h3>
-      <p>
-        Real-time object detection using YOLOv8 and OpenCV. Detects and
-        classifies objects from a webcam feed with bounding boxes and
-        confidence scores. Designed to feed into robot pick-and-place logic.
+      <p class="project-desc">
+        ROS 2 mobile robot with SLAM-based mapping and autonomous navigation,
+        extended with a YOLOv8 vision pipeline for real-time object detection
+        and classification. Fully simulated in Gazebo — no expensive hardware required.
       </p>
+      <p class="project-problem">
+        <strong>Problem:</strong> Robot must navigate unknown spaces and identify objects without human input.<br>
+        <strong>Solution:</strong> ROS 2 nav stack + SLAM + camera feed through YOLOv8 inference node.
+      </p>
+      <div class="project-arch">
+        <span class="arch-node">Camera</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">OpenCV</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">YOLOv8</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">ROS 2 Nav</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Gazebo Sim</span>
+      </div>
       <div class="project-footer">
         <div class="project-tech">
+          <span class="tag">ROS 2</span>
+          <span class="tag">Gazebo</span>
           <span class="tag purple">YOLOv8</span>
           <span class="tag purple">OpenCV</span>
-          <span class="tag purple">Python</span>
-        </div>
-        <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-top">
-        <span class="project-icon">&#x1F3E0;</span>
-        <span class="project-status status-active">Complete</span>
-      </div>
-      <h3>IoT Home Automation</h3>
-      <p>
-        Arduino + Raspberry Pi system controlling lights, sensors, and
-        appliances via MQTT. Includes a web dashboard for monitoring and
-        control. Foundation for larger industrial automation concepts.
-      </p>
-      <div class="project-footer">
-        <div class="project-tech">
-          <span class="tag green">Arduino</span>
-          <span class="tag green">MQTT</span>
-          <span class="tag green">Python</span>
-        </div>
-        <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-top">
-        <span class="project-icon">&#x1F3AE;</span>
-        <span class="project-status status-wip">In Progress</span>
-      </div>
-      <h3>Game AI Agent (GTA-style Env)</h3>
-      <p>
-        Reinforcement learning agent trained in a simulated open-world
-        environment (Unity ML-Agents). The agent learns navigation,
-        obstacle avoidance, and goal-seeking — skills directly transferable
-        to real autonomous systems. QA automation scripts also included.
-      </p>
-      <div class="project-footer">
-        <div class="project-tech">
-          <span class="tag purple">Unity</span>
-          <span class="tag purple">RL</span>
-          <span class="tag purple">Python</span>
-        </div>
-        <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-top">
-        <span class="project-icon">&#x1F527;</span>
-        <span class="project-status status-planned">Planned</span>
-      </div>
-      <h3>6-DOF Robotic Arm Controller</h3>
-      <p>
-        Design and control of a 6-degree-of-freedom robotic arm using
-        inverse kinematics and trajectory planning. Planned integration
-        with the object detection pipeline for pick-and-place automation.
-      </p>
-      <div class="project-footer">
-        <div class="project-tech">
+          <span class="tag">Python</span>
           <span class="tag">C++</span>
-          <span class="tag">ROS 2</span>
-          <span class="tag">MoveIt</span>
         </div>
         <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
       </div>
     </div>
 
+    <!-- 3. AI for automation -->
     <div class="project-card">
-      <div class="project-top">
-        <span class="project-icon">&#x1F4CA;</span>
+      <div class="project-header">
+        <div>
+          <div class="project-category">AI for Industrial Automation</div>
+          <div class="project-title">Predictive Maintenance System</div>
+        </div>
         <span class="project-status status-planned">Planned</span>
       </div>
-      <h3>Predictive Maintenance ML Model</h3>
-      <p>
-        Machine learning model trained on sensor time-series data to
-        predict equipment failure before it happens — a core application
-        of AI in industrial automation and Industry 4.0.
+      <p class="project-desc">
+        LSTM-based anomaly detection model trained on time-series sensor data
+        to predict equipment failure before it happens. Deployed as a REST API
+        with real-time scoring, tracked with MLflow, exported via ONNX for
+        edge deployment.
       </p>
+      <p class="project-problem">
+        <strong>Problem:</strong> Equipment failures are costly and hard to predict from raw sensor streams.<br>
+        <strong>Solution:</strong> Streaming ingestion → LSTM anomaly scorer → FastAPI → dashboard alert.
+      </p>
+      <div class="project-arch">
+        <span class="arch-node">Sensors</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Kafka</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">LSTM Model</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">FastAPI</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Alert + DB</span>
+      </div>
       <div class="project-footer">
         <div class="project-tech">
           <span class="tag purple">PyTorch</span>
-          <span class="tag purple">Pandas</span>
-          <span class="tag green">Docker</span>
+          <span class="tag purple">MLflow</span>
+          <span class="tag purple">ONNX</span>
+          <span class="tag yellow">Kafka</span>
+          <span class="tag yellow">FastAPI</span>
+          <span class="tag">Docker</span>
+        </div>
+        <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
+      </div>
+    </div>
+
+    <!-- 4. System project (featured) -->
+    <div class="project-card featured">
+      <div class="project-header">
+        <div>
+          <div class="project-category">End-to-End System Design &mdash; Flagship Project</div>
+          <div class="project-title">Autonomous Visual Inspection Pipeline</div>
+        </div>
+        <span class="project-status status-planned">Planned</span>
+      </div>
+      <p class="project-desc">
+        A complete industrial inspection system: a camera captures frames, an AI model
+        detects defects in real time, results flow through a message broker to a REST API,
+        get stored in a database, visualised on a live dashboard, and trigger alerts when
+        thresholds are exceeded. Every layer is containerised and deployed via CI/CD.
+        This project demonstrates full systems engineering thinking — not just "a model that works".
+      </p>
+      <p class="project-problem">
+        <strong>Problem:</strong> Manual visual QA is slow, subjective, and doesn't scale.<br>
+        <strong>Solution:</strong> Automated end-to-end pipeline from camera to actionable alert, with full observability and audit log.
+      </p>
+      <div class="project-arch">
+        <span class="arch-node">Camera</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">YOLOv8 Inference</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">MQTT / Kafka</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">FastAPI</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">PostgreSQL</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Grafana</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Alert</span>
+      </div>
+      <div class="project-footer">
+        <div class="project-tech">
+          <span class="tag purple">YOLOv8</span>
+          <span class="tag yellow">FastAPI</span>
+          <span class="tag yellow">Kafka</span>
+          <span class="tag yellow">PostgreSQL</span>
+          <span class="tag green">Grafana</span>
+          <span class="tag">Docker</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag green">MQTT</span>
+        </div>
+        <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
+      </div>
+    </div>
+
+    <!-- 5. Algorithms repo -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-category">Algorithms &amp; Robotics Fundamentals</div>
+          <div class="project-title">Robotics Algorithm Implementations</div>
+        </div>
+        <span class="project-status status-active">Active</span>
+      </div>
+      <p class="project-desc">
+        A living repository of core robotics and control algorithms implemented
+        from scratch in Python, with visualisations. Not a tutorial copy — each
+        implementation is built to understand the math and trade-offs, then
+        tested on simulated scenarios.
+      </p>
+      <p class="project-problem">
+        <strong>Includes:</strong> PID controller, Kalman filter, A* path planning, RRT, inverse kinematics, sensor fusion, basic reinforcement learning (Q-learning, PPO).<br>
+        <strong>Format:</strong> Jupyter notebooks + Python modules + animated visualisations.
+      </p>
+      <div class="project-arch">
+        <span class="arch-node">PID</span>
+        <span class="arch-arrow">&#x2022;</span>
+        <span class="arch-node">Kalman</span>
+        <span class="arch-arrow">&#x2022;</span>
+        <span class="arch-node">A* / RRT</span>
+        <span class="arch-arrow">&#x2022;</span>
+        <span class="arch-node">IK</span>
+        <span class="arch-arrow">&#x2022;</span>
+        <span class="arch-node">Sensor Fusion</span>
+        <span class="arch-arrow">&#x2022;</span>
+        <span class="arch-node">RL</span>
+      </div>
+      <div class="project-footer">
+        <div class="project-tech">
+          <span class="tag">Python</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Matplotlib</span>
+          <span class="tag">Jupyter</span>
+          <span class="tag purple">PyTorch</span>
+        </div>
+        <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
+      </div>
+    </div>
+
+    <!-- 6. Game / RL simulation -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-category">Simulation &amp; Reinforcement Learning</div>
+          <div class="project-title">RL Agent in Open-World Sim</div>
+        </div>
+        <span class="project-status status-wip">In Progress</span>
+      </div>
+      <p class="project-desc">
+        Reinforcement learning agent trained in a Unity ML-Agents open-world
+        environment. The agent learns navigation, obstacle avoidance, and
+        goal-seeking behaviours — core skills for autonomous systems — without
+        needing physical hardware. Includes automated QA test scripts as a bonus.
+      </p>
+      <p class="project-problem">
+        <strong>Why game sim?</strong> Game engines allow 1000x faster iteration than physical robots. Skills learned here (sparse rewards, curriculum learning) transfer directly to real-world robot training.
+      </p>
+      <div class="project-arch">
+        <span class="arch-node">Unity Env</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">ML-Agents</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">PPO Agent</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">TensorBoard</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">ONNX Export</span>
+      </div>
+      <div class="project-footer">
+        <div class="project-tech">
+          <span class="tag purple">Unity ML-Agents</span>
+          <span class="tag purple">PPO</span>
+          <span class="tag purple">ONNX</span>
+          <span class="tag">Python</span>
+          <span class="tag">C#</span>
         </div>
         <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
       </div>
@@ -557,98 +626,80 @@
   </div>
 </section>
 
-<!-- ─── Roadmap ─────────────────────────────────────────────────── -->
+<!-- ── Roadmap ── -->
 <section id="roadmap">
   <p class="section-label">// career roadmap</p>
   <h2>The <span>Plan</span></h2>
-
   <div class="roadmap">
 
     <div class="roadmap-item">
       <div class="roadmap-date">2024–2025</div>
-      <div class="roadmap-line">
-        <div class="roadmap-dot done"></div>
-        <div class="roadmap-connector"></div>
-      </div>
+      <div class="roadmap-line"><div class="roadmap-dot done"></div><div class="roadmap-connector"></div></div>
       <div class="roadmap-content">
         <h3>&#x2705; Foundation</h3>
-        <p>Python, Git, Linux, Arduino, basic electronics, first personal projects</p>
+        <p>Python, Git, Linux, Arduino, basic electronics. First personal projects launched.</p>
       </div>
     </div>
 
     <div class="roadmap-item">
       <div class="roadmap-date">2025–2026</div>
-      <div class="roadmap-line">
-        <div class="roadmap-dot next"></div>
-        <div class="roadmap-connector"></div>
-      </div>
+      <div class="roadmap-line"><div class="roadmap-dot next"></div><div class="roadmap-connector"></div></div>
       <div class="roadmap-content">
         <h3>&#x1F539; Now — Core Stack</h3>
-        <p>ROS 2, computer vision (OpenCV / YOLO), reinforcement learning, simulation (Gazebo). Build 3–5 strong GitHub projects. Contribute to open source robotics repos.</p>
+        <p>Build 5 strong end-to-end projects. ROS 2, computer vision (YOLO), AI pipelines (FastAPI + Docker), simulation (Gazebo). Contribute to open source robotics repos. Build the algorithm fundamentals repo.</p>
       </div>
     </div>
 
     <div class="roadmap-item">
       <div class="roadmap-date">2026</div>
-      <div class="roadmap-line">
-        <div class="roadmap-dot future"></div>
-        <div class="roadmap-connector"></div>
-      </div>
+      <div class="roadmap-line"><div class="roadmap-dot future"></div><div class="roadmap-connector"></div></div>
       <div class="roadmap-content">
-        <h3>Certifications &amp; Internship</h3>
-        <p>ROS 2 Developer cert, TensorFlow Developer cert, Arduino Professional. Apply for internships at automation / robotics companies.</p>
+        <h3>Certifications &amp; Open Source</h3>
+        <p>TensorFlow Developer Certificate, ROS 2 course completion, Docker/Kubernetes basics. Merge PRs into robotics open source projects to show real collaboration.</p>
       </div>
     </div>
 
     <div class="roadmap-item">
       <div class="roadmap-date">2026–2027</div>
-      <div class="roadmap-line">
-        <div class="roadmap-dot future"></div>
-        <div class="roadmap-connector"></div>
-      </div>
+      <div class="roadmap-line"><div class="roadmap-dot future"></div><div class="roadmap-connector"></div></div>
       <div class="roadmap-content">
-        <h3>First Job</h3>
-        <p>Junior Robotics / Automation Engineer role. Targets: autonomous systems, Industry 4.0, drone/vehicle companies, or game AI/QA automation as a bridge role.</p>
+        <h3>First Engineering Role</h3>
+        <p>Junior Automation / Robotics Engineer or AI Systems Engineer. Targets: autonomous systems, Industry 4.0, drone companies, or QA/test automation as a bridge role while building domain depth.</p>
       </div>
     </div>
 
     <div class="roadmap-item">
       <div class="roadmap-date">2028+</div>
-      <div class="roadmap-line">
-        <div class="roadmap-dot future"></div>
-      </div>
+      <div class="roadmap-line"><div class="roadmap-dot future"></div></div>
       <div class="roadmap-content">
-        <h3>Senior Engineer / Specialist</h3>
-        <p>Lead AI-driven robotics systems. Contribute to the next generation of autonomous machines that work alongside humans.</p>
+        <h3>Senior Engineer / Systems Architect</h3>
+        <p>Lead AI-robotics systems from concept to production. Design the next generation of autonomous machines.</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ─── Contact ─────────────────────────────────────────────────── -->
+<!-- ── Contact ── -->
 <section id="contact">
   <p class="section-label">// contact</p>
   <h2>Let's <span>Connect</span></h2>
   <div class="contact-grid">
     <div class="contact-info">
       <p>
-        I'm actively looking for internships, collaborations, and entry-level
-        opportunities in automation, robotics, and AI engineering.
-        If you have a project or opportunity — reach out.
+        I'm actively looking for internships, collaborations, and junior opportunities
+        in automation, robotics, and AI engineering. If you have a project, opportunity,
+        or just want to talk engineering — reach out.
       </p>
       <div class="contact-links">
         <a class="contact-link" href="mailto:kubakacprzyk33@gmail.com">
-          <span class="contact-link-icon">&#x2709;&#xFE0F;</span>
-          kubakacprzyk33@gmail.com
+          <span>&#x2709;&#xFE0F;</span> kubakacprzyk33@gmail.com
         </a>
         <a class="contact-link" href="https://github.com/kaskus90" target="_blank">
-          <span class="contact-link-icon">&#x1F4BB;</span>
-          github.com/JakubKacprzyk
+          <span>&#x1F4BB;</span> github.com/kaskus90
         </a>
         <a class="contact-link" href="https://www.linkedin.com/in/jakub-kacprzyk" target="_blank">
-          <span class="contact-link-icon">&#x1F517;</span>
-          linkedin.com/in/jakub-kacprzyk
+          <span>&#x1F517;</span> linkedin.com/in/jakub-kacprzyk
         </a>
       </div>
     </div>
@@ -661,12 +712,10 @@
   </div>
 </section>
 
-<!-- ─── Footer ─────────────────────────────────────────────────── -->
+<!-- ── Footer ── -->
 <footer>
   <p>Built with HTML &amp; CSS &mdash; Jakub Kacprzyk &copy; 2026</p>
-  <p style="margin-top:.4rem; font-size:.8rem; opacity:.6;">
-    Automation &bull; Robotics &bull; Artificial Intelligence
-  </p>
+  <p style="margin-top:.4rem;font-size:.8rem;opacity:.6;">Automation &bull; Robotics &bull; Artificial Intelligence</p>
 </footer>
 
 </body>
