@@ -45,18 +45,18 @@
 
     /* ── Hero ── */
     #hero {
-      min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-      padding-top: 5rem; max-width: 1100px; margin: 0 auto;
+      display: flex; flex-direction: column; align-items: center;
+      padding: 8rem 1.5rem 4rem; max-width: 1100px; margin: 0 auto; text-align: center;
     }
     .hero-tag {
       display: inline-block; background: rgba(0,212,255,.1); border: 1px solid rgba(0,212,255,.3);
       color: var(--accent); padding: .25rem .75rem; border-radius: 20px; font-size: .8rem;
       letter-spacing: 1px; margin-bottom: 1.5rem;
     }
-    .hero-name { font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+    .hero-name { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; white-space: nowrap; }
     .hero-name span { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
     .hero-sub { font-size: 1.2rem; color: var(--muted); max-width: 620px; margin-bottom: 2rem; }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
     .btn { padding: .7rem 1.6rem; border-radius: 6px; font-size: .95rem; font-weight: 600; transition: all .2s; border: none; display: inline-block; }
     .btn-primary { background: var(--accent); color: #000; }
     .btn-primary:hover { background: #33ddff; text-decoration: none; }
@@ -201,7 +201,7 @@
 <!-- ── Hero ── -->
 <section id="hero">
   <span class="hero-tag">&#x1F916; Automation &amp; Robotics Engineer</span>
-  <h1 class="hero-name">Hi, I'm <span>Jakub<br>Kacprzyk</span></h1>
+  <h1 class="hero-name">Hi, I'm <span>Jakub Kacprzyk</span></h1>
   <p class="hero-sub">
     I build end-to-end systems where AI meets hardware — from sensor networks
     and computer vision pipelines to autonomous robots and industrial automation.
@@ -212,7 +212,6 @@
     <a class="btn btn-outline" href="#contact">Get in Touch</a>
     <a class="btn btn-outline" href="https://github.com/kaskus90" target="_blank">GitHub</a>
   </div>
-  <div class="hero-scroll">Scroll to explore</div>
 </section>
 
 <!-- ── About ── -->
