@@ -357,6 +357,48 @@
 
   <div class="projects-grid">
 
+    <!-- 0. Mobile Robot -->
+    <div class="project-card">
+      <div class="project-header">
+        <div>
+          <div class="project-category">Robotics / Autonomous Systems</div>
+          <div class="project-title">Roomba Robot Simulation</div>
+        </div>
+        <span class="project-status status-active">Active</span>
+      </div>
+      <p class="project-desc">
+        Python simulation of an autonomous cleaning robot (Roomba-style) that
+        navigates and cleans 3 rooms — living room, kitchen, and bedroom — on
+        a time-based schedule. Implements a hardware abstraction layer, state
+        machine, and sonar-based obstacle avoidance.
+      </p>
+      <p class="project-problem">
+        <strong>Problem:</strong> Demonstrate HW ↔ SW communication and autonomous decision-making without physical hardware.<br>
+        <strong>Solution:</strong> Scheduler triggers cleaning at set hours → controller transitions states (IDLE → MOVING → AVOIDING) → sonar drives obstacle logic → rooms cleaned in sequence.
+      </p>
+      <div class="project-arch">
+        <span class="arch-node">Scheduler</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Controller</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">State Machine</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">HW Simulator</span>
+        <span class="arch-arrow">&#x2192;</span>
+        <span class="arch-node">Motors / Sonar</span>
+      </div>
+      <div class="project-footer">
+        <div class="project-tech">
+          <span class="tag">Python</span>
+          <span class="tag purple">State Machine</span>
+          <span class="tag green">Obstacle Avoidance</span>
+          <span class="tag yellow">Scheduler</span>
+          <span class="tag">HW Simulation</span>
+        </div>
+        <a class="project-link" href="https://github.com/kaskus90/robot_project" target="_blank">GitHub &#x2192;</a>
+      </div>
+    </div>
+
     <!-- 1. Industrial IoT -->
     <div class="project-card">
       <div class="project-header">
