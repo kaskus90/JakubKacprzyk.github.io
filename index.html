@@ -403,44 +403,42 @@
     <div class="project-card">
       <div class="project-header">
         <div>
-          <div class="project-category">Industrial Automation / IoT</div>
-          <div class="project-title">Smart Greenhouse Monitor</div>
+          <div class="project-category">IoT / Industrial Automation</div>
+          <div class="project-title">Smart Greenhouse Control System</div>
         </div>
-        <span class="project-status status-wip">In Progress</span>
+        <span class="project-status status-active">Active</span>
       </div>
       <p class="project-desc">
-        Automated sensor network monitoring temperature, humidity, soil moisture,
-        and light. Triggers actuators (fans, pumps, grow lights) based on
-        configurable thresholds. Built to demonstrate real industrial automation
-        concepts on accessible hardware.
+        End-to-end IoT system for greenhouse automation. Python simulator publishes
+        realistic sensor data (temperature, humidity, soil moisture, light) via MQTT.
+        Node-RED executes threshold-based control logic triggering fan, pump, and grow
+        light actuators. All data flows to InfluxDB and visualized live in Grafana.
       </p>
       <p class="project-problem">
-        <strong>Problem:</strong> Manual monitoring causes crop loss and energy waste.<br>
-        <strong>Solution:</strong> ESP32 nodes + MQTT bus + automated control logic + live Grafana dashboard with SMS alerts.
+        <strong>Problem:</strong> Manual greenhouse monitoring is inefficient; crop conditions must be maintained within tight ranges.<br>
+        <strong>Solution:</strong> Full-stack automation: simulate → publish → decide → actuate. Threshold logic: temp 30°C (fan), soil 30% (pump), light 200 lux (grow light).
       </p>
       <div class="project-arch">
-        <span class="arch-node">ESP32 Sensors</span>
+        <span class="arch-node">Python Simulator</span>
         <span class="arch-arrow">&#x2192;</span>
-        <span class="arch-node">MQTT Broker</span>
+        <span class="arch-node">MQTT</span>
         <span class="arch-arrow">&#x2192;</span>
-        <span class="arch-node">Node-RED</span>
+        <span class="arch-node">Node-RED Logic</span>
         <span class="arch-arrow">&#x2192;</span>
         <span class="arch-node">InfluxDB</span>
         <span class="arch-arrow">&#x2192;</span>
         <span class="arch-node">Grafana</span>
-        <span class="arch-arrow">&#x2192;</span>
-        <span class="arch-node">Alerts</span>
       </div>
       <div class="project-footer">
         <div class="project-tech">
-          <span class="tag green">ESP32</span>
+          <span class="tag">Python</span>
           <span class="tag green">MQTT</span>
           <span class="tag green">Node-RED</span>
           <span class="tag green">InfluxDB</span>
           <span class="tag green">Grafana</span>
           <span class="tag">Docker</span>
         </div>
-        <a class="project-link" href="https://github.com/kaskus90" target="_blank">GitHub &#x2192;</a>
+        <a class="project-link" href="https://github.com/kaskus90/smart_greenhouse" target="_blank">GitHub &#x2192;</a>
       </div>
     </div>
 
